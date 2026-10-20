@@ -1,0 +1,25 @@
+{
+  "quelle_wurzel": "",
+  "streams": [
+    {
+      "id": "S-1",
+      "name": "Beispiel Stream",
+      "verantwortlich": "(TBD)",
+      "status": "offen",
+      "beschreibung": "Beispiel-Eintrag der Vorlage – zeigt nur die Struktur.",
+      "deliverables": [
+        { "titel": "Beispiel Deliverable", "status": "offen", "faellig": null }
+      ],
+      "offene_punkte": [
+        { "titel": "Beispiel offener Punkt", "verantwortlich": "(TBD)" }
+      ],
+      "dokumente": [
+        {
+          "titel": "Beispiel Dokument",
+          "pfad": "",
+          "bemerkung": "Pfad muss innerhalb von quelle_wurzel oder einer Quelle aus tools/quellen.json liegen, sonst verweigert der Server das Öffnen."
+        }
+      ]
+    }
+  ]
+}

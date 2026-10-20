@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MXP Projektmanagement</title>
+  <link rel="icon" href="assets/axpo-x.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="assets/axpo-logo.png" alt="Axpo">
+        <div class="sidebar__projekt">
+          <div class="sidebar__kuerzel" id="projekt-kuerzel">MXP-000</div>
+          <div class="sidebar__name" id="projekt-name">Projekt wird geladen …</div>
+        </div>
+      </div>
+      <nav class="nav" id="nav" aria-label="Projektnavigation"></nav>
+    </aside>
+
+    <main class="inhalt">
+      <header class="kopf">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap">
+          <div>
+            <h1 id="titel">Übersicht</h1>
+            <p id="untertitel">Kennzahlen und Stammdaten</p>
+          </div>
+          <button class="knopf knopf--zweit" id="neu-laden" type="button">Daten neu laden</button>
+        </div>
+      </header>
+
+      <section class="bereich" id="bereich"></section>
+
+      <footer class="fuss">
+        Läuft lokal auf 127.0.0.1 – es werden keine Daten nach aussen gesendet.
+        Inhalte pflegst du in <code>projekt/</code>, danach «Daten neu laden».
+      </footer>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

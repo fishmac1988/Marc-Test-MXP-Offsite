@@ -1,0 +1,5 @@
+# Lokal eingelesene Wissensquellen (nicht ins Repo, siehe AGENTS.md "Input fetch")
+inbox/
+
+__pycache__/
+*.pyc

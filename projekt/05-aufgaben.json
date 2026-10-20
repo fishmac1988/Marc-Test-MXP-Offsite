@@ -1,0 +1,10 @@
+[
+  {
+    "id": "AP-1",
+    "titel": "Beispiel Arbeitspaket",
+    "status": "offen",
+    "verantwortlich": "(TBD)",
+    "faellig": null,
+    "beschreibung": "Beispiel-Eintrag der Vorlage. Erlaubte Status: offen, in_arbeit, erledigt."
+  }
+]

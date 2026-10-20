@@ -1,0 +1,12 @@
+{
+  "waehrung": "CHF",
+  "gesamtbudget": 0,
+  "positionen": [
+    {
+      "position": "Beispiel Position",
+      "budget": 0,
+      "ist": 0,
+      "bemerkung": "Beispiel-Eintrag der Vorlage – zeigt nur die Struktur."
+    }
+  ]
+}

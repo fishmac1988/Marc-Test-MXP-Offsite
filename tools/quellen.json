@@ -1,0 +1,10 @@
+{
+  "_hinweis": "Demo-Eintrag der Vorlage. Bei einem neuen Projekt durch den lokal synchronisierten MS-Teams-/OneDrive-Ordner ERSETZEN (nicht ergänzen) – siehe AGENTS.md.",
+  "quellen": [
+    {
+      "name": "Demo-Quelle",
+      "pfad": "C:\\Users\\<benutzer>\\OneDrive - Axpo Services AG\\<Teams-Projektordner>",
+      "aktiv": false
+    }
+  ]
+}

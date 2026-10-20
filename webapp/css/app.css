@@ -1,0 +1,552 @@
+/* MXP Projektmanagement – Axpo Corporate Design
+   Verbindliche Vorgaben: design/design-vorgaben.md
+   Axpo Blue = funktional (Buttons, Links, Akzente)
+   Axpo Red  = ausschliesslich dekorativ (WCAG AA: nicht fuer Text/Buttons/Links)
+   Keine externen Fonts/CDNs – rein lokal. */
+
+:root {
+  --axpo-blue: #313193;
+  --axpo-blue-700: #262673;
+  --axpo-blue-50: #eeeef7;
+  --axpo-red: #ff5d64;
+  --axpo-yellow: #ffd24d;
+  --dark-grey: #3d3d3d;
+  --green: #008400;
+
+  --grey-50: #f7f7f8;
+  --grey-100: #eeeef0;
+  --grey-200: #e0e0e3;
+  --grey-400: #9a9aa2;
+  --grey-600: #62626b;
+
+  /* Statusfarben der Ampel: kontraststarke Signalfarben, bewusst nicht
+     Axpo Red (nur dekorativ) und nicht Axpo Green (nur Nachhaltigkeit). */
+  --ampel-gruen: #2e7d32;
+  --ampel-gelb: #a8620a;
+  --ampel-rot: #c62828;
+
+  --axpo-gradient: linear-gradient(120deg, #ffd24d 0%, #ff5d64 45%, #313193 100%);
+
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(61, 61, 61, .08), 0 6px 18px rgba(61, 61, 61, .06);
+  --sidebar: 260px;
+
+  --font-body: "Open Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--dark-grey);
+  background: var(--grey-50);
+}
+
+/* ---------------------------------------------------------------- Layout */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid var(--grey-200);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar__brand {
+  padding: 22px 20px 16px;
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.sidebar__brand img {
+  width: 108px;
+  height: auto;
+  display: block;
+}
+
+.sidebar__projekt {
+  margin-top: 14px;
+}
+
+.sidebar__kuerzel {
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--grey-600);
+}
+
+.sidebar__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark-grey);
+  word-break: break-word;
+}
+
+.nav {
+  padding: 12px 10px 24px;
+  flex: 1;
+}
+
+.nav__gruppe {
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--grey-400);
+  padding: 16px 10px 6px;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--dark-grey);
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav__link:hover { background: var(--grey-100); }
+
+.nav__link.is-aktiv {
+  background: var(--axpo-blue-50);
+  color: var(--axpo-blue);
+  font-weight: 600;
+}
+
+.nav__anzahl {
+  font-size: 12px;
+  color: var(--grey-600);
+  background: var(--grey-100);
+  border-radius: 999px;
+  padding: 0 8px;
+}
+
+.nav__link.is-aktiv .nav__anzahl {
+  background: #fff;
+  color: var(--axpo-blue);
+}
+
+.inhalt {
+  padding: 0 0 64px;
+  min-width: 0;
+}
+
+.kopf {
+  background: #fff;
+  border-bottom: 1px solid var(--grey-200);
+  padding: 22px 32px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.kopf::after {
+  content: "";
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--axpo-gradient);
+  margin-top: 16px;
+}
+
+.kopf h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark-grey);
+}
+
+.kopf p {
+  margin: 4px 0 0;
+  color: var(--grey-600);
+}
+
+.bereich { padding: 28px 32px 0; }
+
+/* ----------------------------------------------------------------- Karten */
+
+.karten {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.karte {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.karte h2, .karte h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.kennzahl {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--axpo-blue);
+  line-height: 1.2;
+}
+
+.kennzahl__label {
+  font-size: 13px;
+  color: var(--grey-600);
+}
+
+.block { margin-top: 24px; }
+
+.block > h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+/* ----------------------------------------------------------------- Ampel */
+
+.ampel {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.ampel::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--grey-400);
+  flex: none;
+}
+
+.ampel--gruen::before { background: var(--ampel-gruen); }
+.ampel--gelb::before { background: var(--ampel-gelb); }
+.ampel--rot::before { background: var(--ampel-rot); }
+
+.marke {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--grey-100);
+  color: var(--grey-600);
+  white-space: nowrap;
+}
+
+.marke--offen { background: var(--grey-100); color: var(--grey-600); }
+.marke--in_arbeit { background: var(--axpo-blue-50); color: var(--axpo-blue); }
+.marke--erledigt, .marke--erreicht { background: #e7f3e8; color: var(--ampel-gruen); }
+.marke--kritisch { background: #fbe9e9; color: var(--ampel-rot); }
+
+/* ------------------------------------------------------------ Fortschritt */
+
+.fortschritt {
+  background: var(--grey-100);
+  border-radius: 999px;
+  height: 9px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.fortschritt__wert {
+  height: 100%;
+  background: var(--axpo-blue);
+  border-radius: 999px;
+}
+
+/* --------------------------------------------------------------- Tabellen */
+
+.tabelle-huelle {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius);
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--grey-200);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  color: var(--grey-600);
+  background: var(--grey-50);
+  position: sticky;
+  top: 0;
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: var(--grey-50); }
+
+/* ---------------------------------------------------------------- Kanban */
+
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.kanban__spalte {
+  background: var(--grey-100);
+  border-radius: var(--radius);
+  padding: 12px;
+  min-height: 120px;
+}
+
+.kanban__titel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey-600);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kanban__karte {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.kanban__karte h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kanban__meta {
+  font-size: 12px;
+  color: var(--grey-600);
+}
+
+/* ----------------------------------------------------------- Risikomatrix */
+
+.matrix {
+  display: grid;
+  grid-template-columns: auto repeat(5, minmax(52px, 1fr));
+  gap: 4px;
+  max-width: 560px;
+}
+
+.matrix__zelle {
+  border-radius: 6px;
+  min-height: 54px;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-content: flex-start;
+}
+
+.matrix__zelle--gering { background: #e7f3e8; }
+.matrix__zelle--mittel { background: #fdf1de; }
+.matrix__zelle--hoch { background: #fbe9e9; }
+
+.matrix__achse {
+  font-size: 12px;
+  color: var(--grey-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.matrix__punkt {
+  background: var(--axpo-blue);
+  color: #fff;
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 11px;
+  height: fit-content;
+}
+
+/* -------------------------------------------------------------- Markdown */
+
+.markdown {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius);
+  padding: 8px 28px 24px;
+  box-shadow: var(--shadow);
+  max-width: 900px;
+}
+
+.markdown h1 { font-size: 22px; }
+.markdown h2 { font-size: 18px; margin-top: 26px; }
+.markdown h3 { font-size: 16px; }
+.markdown h1, .markdown h2, .markdown h3 { font-weight: 600; color: var(--dark-grey); }
+.markdown code {
+  background: var(--grey-100);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 13px;
+}
+.markdown blockquote {
+  margin: 16px 0;
+  padding: 2px 16px;
+  border-left: 3px solid var(--grey-200);
+  color: var(--grey-600);
+}
+.markdown table { margin: 14px 0; }
+.markdown th, .markdown td { border: 1px solid var(--grey-200); }
+
+/* --------------------------------------------------------------- Formular */
+
+.formular {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--grey-600);
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  font: inherit;
+  padding: 9px 11px;
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--dark-grey);
+}
+
+input[type="text"]:focus-visible,
+.nav__link:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--axpo-blue);
+  outline-offset: 2px;
+}
+
+.knopf {
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+  background: var(--axpo-blue);
+  color: #fff;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.knopf:hover { background: var(--axpo-blue-700); }
+
+.knopf--zweit {
+  background: #fff;
+  color: var(--axpo-blue);
+  border: 1px solid var(--grey-200);
+}
+
+.knopf--zweit:hover { background: var(--axpo-blue-50); }
+
+a, .verweis {
+  color: var(--axpo-blue);
+}
+
+.verweis {
+  background: none;
+  border: 0;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------- Hinweise */
+
+.hinweis {
+  background: var(--axpo-blue-50);
+  border-left: 3px solid var(--axpo-blue);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.hinweis--fehler {
+  background: #fbe9e9;
+  border-left-color: var(--ampel-rot);
+}
+
+.leer {
+  color: var(--grey-600);
+  font-size: 14px;
+  background: #fff;
+  border: 1px dashed var(--grey-200);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+}
+
+.meldung {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: var(--dark-grey);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 420px;
+  z-index: 20;
+}
+
+.meldung--fehler { background: var(--ampel-rot); }
+
+.fuss {
+  padding: 28px 32px 0;
+  color: var(--grey-400);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .kanban { grid-template-columns: 1fr; }
+  .bereich, .kopf { padding-left: 18px; padding-right: 18px; }
+}

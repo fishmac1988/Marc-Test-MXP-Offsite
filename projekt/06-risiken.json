@@ -1,0 +1,11 @@
+[
+  {
+    "id": "R-1",
+    "titel": "Beispiel Risiko",
+    "wahrscheinlichkeit": 2,
+    "auswirkung": 3,
+    "status": "offen",
+    "verantwortlich": "(TBD)",
+    "massnahme": "Beispiel-Eintrag der Vorlage. Wahrscheinlichkeit und Auswirkung je 1–5; ab Produkt 9 gilt ein Risiko als kritisch."
+  }
+]

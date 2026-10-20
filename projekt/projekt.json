@@ -1,0 +1,13 @@
+{
+  "name": "(TBD)",
+  "kuerzel": "MXP-000",
+  "projektleiter": "(TBD)",
+  "auftraggeber": "(TBD)",
+  "status": "geplant",
+  "phase": "Initialisierung",
+  "start": null,
+  "ende_geplant": null,
+  "ampel": "gruen",
+  "fortschritt_prozent": 0,
+  "kurzbeschreibung": "(TBD – wird über die Abfragen aus Teil A in GEHIRN.md gefüllt.)"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Beispiel Stakeholder",
+    "rolle": "Auftraggeber",
+    "organisation": "(TBD)",
+    "einfluss": 3,
+    "interesse": 3,
+    "haltung": "neutral",
+    "massnahme": "Beispiel-Eintrag der Vorlage – zeigt nur die Struktur."
+  }
+]
